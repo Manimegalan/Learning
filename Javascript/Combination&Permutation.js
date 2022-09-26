@@ -1,3 +1,16 @@
+/* =============================== Combination =============================== */
+
+function combination(array) {
+    if (array.length === 0) return [[]];
+    const firstEle = array[0], restEle = array.slice(1), allCombs = [];
+    const combs = combination(restEle);
+    combs.forEach(comb => {
+        allCombs.push([...comb, firstEle])
+    })
+    return [...combs, ...allCombs]
+}
+console.log(combination(["a", "b", "c"]))
+
 /* =============================== Permutation with string =============================== */
 
 function findPermutation(string) {
