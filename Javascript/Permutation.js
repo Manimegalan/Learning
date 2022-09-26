@@ -27,7 +27,6 @@ function permutation(elements) {
     const permsWithoutFirst = permutation(restEle);
     const allPermutaion = [];
     permsWithoutFirst.forEach(prem => {
-        debugger
         for (let i = 0; i <= prem.length; i++) {
             const premWithFirst = [...prem.slice(0, i), firstEle, ...prem.slice(i)]
             allPermutaion.push(premWithFirst)
