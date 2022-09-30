@@ -1,10 +1,8 @@
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
-const arrayString = fruits.toString();
-//  'Banana,Orange,Apple,Mango'
+const arrayString = fruits.toString(); //  expected output: "Banana,Orange,Apple,Mango"
 
-const arrayJoin = fruits.join("_");
-//  'Banana_Orange_Apple_Mango'
+const arrayJoin = fruits.join("_"); //  expected output: "Banana_Orange_Apple_Mango"
 
 const count = fruits.push('Sapota', 'Guava');
 console.log(count); // expected output: 6
