@@ -1,0 +1,25 @@
+// Client side unzipping
+// jszip npm is used to unzip files in client side
+
+const zip = await jszip.loadAsync(e.target.files[0]);
+
+const fileData = await zip.file(/./);
+
+for await(let file of fileData){
+    const filename = file.name;
+    const content = await file.async("base64"); // Supported options base64, string, binarystring, array, uint8array, arraybuffer, blob, nodebuffer
+    console.log({filename, content})
+}
+
+// Server side unzipping
+// adm-zip npm is used to unzip files in server side
+
+const zip = new AdmZip(files.file.filepath);
+const zipEntries = zip.getEntries();
+
+for await (entry of zipEntries) {
+  if (!entry.isDirectory) {   // Read/Upload data only if not a directory
+     const filename = entry.entryName;
+     const content = entry.getData();
+  }
+}
